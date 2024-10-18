@@ -53,7 +53,7 @@ public class KickPacket implements IMessage {
         private void applyKnockback(Entity target, EntityPlayer player) {
             // Implement your knockback logic here
             Vec3d direction = target.getPositionVector().subtract(player.getPositionVector()).normalize();
-            double knockbackStrength = 1.01; // Adjust this value to your liking
+            double knockbackStrength = 1.01; // TODO Adjust this
 
             target.motionX += direction.x * knockbackStrength;
             target.motionY += 0.5; // Add some upward force
