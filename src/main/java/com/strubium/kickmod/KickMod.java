@@ -1,5 +1,6 @@
 package com.strubium.kickmod;
 
+import com.strubium.kickmod.proxys.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,7 +18,7 @@ public class KickMod {
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
 
 
-    @SidedProxy(clientSide="com.strubium.kickmod.ClientProxy")
+    @SidedProxy(clientSide="com.strubium.kickmod.proxys.ClientProxy")
     public static IProxy proxy;
 
     /**

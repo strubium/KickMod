@@ -1,4 +1,4 @@
-package com.strubium.kickmod;
+package com.strubium.kickmod.proxys;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import com.strubium.kickmod.keys.KeyInputHandler;
@@ -6,11 +6,9 @@ import com.strubium.kickmod.keys.Keybindings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
