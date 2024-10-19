@@ -2,7 +2,9 @@ package com.strubium.kickmod;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
@@ -61,10 +63,18 @@ public class KickPacket implements IMessage {
 
             target.velocityChanged = true;
 
+            // Apply damage to the target
+            float damageAmount = 4.0F; // Adjust this value as needed
+            if (target instanceof EntityLivingBase) { // Ensure the target can take damage
+                target.attackEntityFrom(DamageSource.causePlayerDamage(player), damageAmount);
+                System.out.println("Dealt " + damageAmount + " damage to " + target.getName());
+            }
+
             // Print debug information
             System.out.println("Kicking " + target.getName() + " with motion: (" +
                     target.motionX + ", " + target.motionY + ", " +
                     target.motionZ + ")");
         }
+
     }
 }
